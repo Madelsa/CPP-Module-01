@@ -3,19 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+         #
+#    By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/12 15:41:51 by mahmoud           #+#    #+#              #
-#    Updated: 2024/08/12 17:21:20 by mahmoud          ###   ########.fr        #
+#    Created: 2024/08/18 17:53:18 by mabdelsa          #+#    #+#              #
+#    Updated: 2024/08/18 17:56:07 by mabdelsa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC	=	PhoneBook.cpp
+SRC	=	./main.cpp \
 
-NAME = PhoneBook
+NAME = main
 RM = rm -f
 CC = c++
-CPPFLAGS = -Wall -Wextra -Werror
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJS = $(SRC:.cpp=.o)
 

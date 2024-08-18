@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 13:26:33 by mabdelsa          #+#    #+#             */
-/*   Updated: 2024/08/18 17:38:36 by mabdelsa         ###   ########.fr       */
+/*   Created: 2024/08/18 13:52:37 by mabdelsa          #+#    #+#             */
+/*   Updated: 2024/08/18 17:35:28 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Zombie.hpp"
 
-# include <iostream>
-
-class Zombie
+int main()
 {
-    private:
-    std::string name;
+    int numZombie = 3;
+    Zombie *zombie;
     
-    public:
-    Zombie();
-    Zombie(std::string name);
-    ~Zombie();
-    void announce(void);  
-    void setName(std::string zombieName);   
- 
-};
-
-Zombie* newZombie( std::string name );
-void randomChump( std::string name ); 
-
-#endif
+    zombie = zombieHorde(numZombie, "Multi Zombie");
+    for (int i = 0; i < numZombie; i++)
+    {
+        std::cout << "Zombie " << i + 1 << ": " << std::endl;
+        zombie[i].announce();
+    }
+    std::cout << std::endl;
+    delete  []zombie;
+}

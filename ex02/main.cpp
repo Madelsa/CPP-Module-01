@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 13:26:33 by mabdelsa          #+#    #+#             */
-/*   Updated: 2024/08/18 17:38:36 by mabdelsa         ###   ########.fr       */
+/*   Created: 2024/08/18 17:36:44 by mabdelsa          #+#    #+#             */
+/*   Updated: 2024/08/18 17:50:37 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-
 # include <iostream>
 
-class Zombie
+int main()
 {
-    private:
-    std::string name;
+    std::string name = "HI THIS IS BRAIN";
+    std::string *ptName = &name;
+    std::string &refName = name;
     
-    public:
-    Zombie();
-    Zombie(std::string name);
-    ~Zombie();
-    void announce(void);  
-    void setName(std::string zombieName);   
- 
-};
-
-Zombie* newZombie( std::string name );
-void randomChump( std::string name ); 
-
-#endif
+    std::cout << "Address of the string variable (name): " << &name << std::endl;
+    std::cout << "Address held by ptName: " << ptName << std::endl;
+    std::cout << "Address held by refName: " << &refName << std::endl;
+}
