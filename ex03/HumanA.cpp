@@ -3,18 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 15:58:01 by mabdelsa          #+#    #+#             */
-/*   Updated: 2024/08/19 17:35:51 by mabdelsa         ###   ########.fr       */
+/*   Updated: 2024/08/19 23:22:54 by mahmoud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon &weapon) : weapon(weapon), name(name) {}
+HumanA::HumanA(std::string name, Weapon &weapon) : name(name), weapon(weapon) {}
 
 void HumanA::attack()
 {
-    std::cout << name << " attacks with their " << weapon.getType() << std::endl;
+    if (weapon.getType().empty())
+    {
+        std::cout << name << " has no weapon!" << std::endl;
+    }
+    else
+    {
+        std::cout << name << " attacks with their " << weapon.getType() << std::endl;
+    }
 }
+
+HumanA::~HumanA(){}
+
