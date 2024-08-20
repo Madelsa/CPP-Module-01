@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 16:03:26 by mabdelsa          #+#    #+#             */
-/*   Updated: 2024/08/19 23:20:29 by mahmoud          ###   ########.fr       */
+/*   Updated: 2024/08/20 12:56:37 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name) : name(name) {}
+HumanB::HumanB(std::string name) : name(name), weapon(nullptr){}
 
-void HumanB::attack()
+void HumanB::attack()   
 {
-    if (weapon == nullptr || weapon->getType().empty())
+    if (!weapon || weapon->getType().empty())
     {
         std::cout << name << " has no weapon!" << std::endl;
     }

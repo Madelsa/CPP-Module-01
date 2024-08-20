@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 23:29:57 by mahmoud           #+#    #+#             */
-/*   Updated: 2024/08/20 00:06:46 by mahmoud          ###   ########.fr       */
+/*   Updated: 2024/08/20 13:16:44 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 
 void replaceStrings(std::string &filename, std::string &s1, std::string &s2)
 {
-    (void)s1;
-    (void)s2;
-    std::ifstream fileIn(filename);
+    std::ifstream fileIn(filename.c_str());
     std::string line;
     std::string fileContents;
     std::string::size_type currentPosition = 0;
@@ -39,7 +37,7 @@ void replaceStrings(std::string &filename, std::string &s1, std::string &s2)
         fileContents.insert(currentPosition, s2);
         currentPosition += s2.length();
     }
-    std::ofstream fileOut(filename + ".replace");
+    std::ofstream fileOut((filename + ".replace").c_str());
     if (!fileOut)
     {
         std::cout << "Failed to create file " << filename << ".replace." << std::endl;

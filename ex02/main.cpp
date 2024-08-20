@@ -6,7 +6,7 @@
 /*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 17:36:44 by mabdelsa          #+#    #+#             */
-/*   Updated: 2024/08/19 14:32:50 by mabdelsa         ###   ########.fr       */
+/*   Updated: 2024/08/20 12:43:26 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,5 @@ int main()
 
     std::cout << "Value of the string variable (name): " << name << std::endl;
     std::cout << "Value held by ptName: " << *ptName << std::endl;
-    std::cout << "Value held by refName: " << refName << std::endl;
-
-    
+    std::cout << "Value held by refName: " << refName << std::endl;    
 }
